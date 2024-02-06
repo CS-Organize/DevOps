@@ -1,6 +1,10 @@
 # CODEOWNERS로 코드 리뷰어 지정하기
 *	   @seungwonme
 
+# python 파일은 @seungwonme, @python-owner를 리뷰어로 지정
+# 반드시 * 밑에 적어야 함 (*이 .py를 포함하는 모든 파일을 의미하기 때문에 덮어쓰임)
+*.py   @seungwonme @python-owner
+
 # This is a comment.
 # Each line is a file pattern followed by one or more owners.
 
