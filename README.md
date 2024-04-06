@@ -1,35 +1,22 @@
-# Git
+# DevOps
 
-[Git Reference](https://git-scm.com/docs)
+- DevOps는 소프트웨어 개발과 정보기술 운영(Operations)의 합성어
+- 소프트웨어 제품이 개발부터 배포, 운영까지의 전체 수명주기 동안 지속적으로 통합 및 배포될 수 있도록 하는 문화, 철학, 방법론, 도구들의 집합을 의미
+- DevOps는 개발팀과 운영팀 간의 협업을 강화하고, 개발과 배포 사이의 간극을 줄이며, 소프트웨어 제품의 품질과 속도를 향상시키는 데 중점을 둠
 
-`git help`, `man git`, `git <command> --help` 명령어를 통해 각 명령어의 사용법을 확인할 수 있다.
+## DevOps의 주요 특징
+1. **빠른 소프트웨어 제공**: 개발에서 운영으로의 과정을 자동화하여, 소프트웨어를 빠르게 개발하고 출시할 수 있도록 함
+2. **자주 발생하는 출시**: 지속적 통합과 지속적 배포(CI/CD)를 통해 개발자가 코드 변경 사항을 자주 테스트하고 출시할 수 있도록 함
+3. **안정성과 신뢰성 향상**: 소프트웨어의 안정성과 신뢰성을 향상시켜 사용자 경험을 개선하고 장애를 최소화
+4. **자동화**: 반복적이고 지루한 작업을 자동화하여 인력을 절약하고 오류 가능성을 줄임
+5. **문화적 변화**: 개발팀과 운영팀 간의 협업과 의사소통을 강화하여 조직 내 문화적 변화를 유도
 
-## Git Command Workflow
+## DevOps의 핵심 도구
+1. **버전 관리 시스템**: 코드 변경 사항을 추적하고 관리하기 위한 도구로서 Git이 가장 널리 사용
+2. **지속적 통합(CI)**: 코드 변경 사항을 정기적으로 통합하고 테스트하는 프로세스를 자동화하는 도구로서 Jenkins, Travis CI, GitLab CI 등이 사용
+3. **지속적 배포(CD)**: 소프트웨어 변경 사항을 자동으로 배포하고 인프라를 관리하는 도구로서 Docker, Kubernetes, Terraform 등이 사용
+4. **자동화 도구**: 반복적이고 지루한 작업을 자동화하기 위한 도구로서 Ansible, Chef, Puppet 등이 사용
+5. **모니터링 및 로깅**: 운영 환경에서 애플리케이션 및 인프라의 성능을 모니터링하고 로그를 수집하는 도구로서 Prometheus, ELK(Elasticsearch, Logstash, Kibana), Grafana 등이 사용
+6. **협업 도구**: 개발자와 운영자 간의 협업을 강화하기 위한 도구로서 Slack, Microsoft Teams, Jira, Confluence 등이 사용
 
-![](./img/GitWorkflow.png)
-
-## Git Branch
-
-### Git Branch Model
-- [{Git,Github,Gitlab} Flow 1](https://ujuc.github.io/2015/12/16/git-flow-github-flow-gitlab-flow/)
-- [{Git,Github,Gitlab} Flow 2](https://wiki.yowu.dev/ko/dev/Git/about-git-github-gitlab-flow)
-- [Trunk Based Development](https://trunkbaseddevelopment.com)
-- [Trunk Based Development 기술 블로그](https://tech.mfort.co.kr/blog/2022-08-05-trunk-based-development/)
-
-### Git Branch Policy
-- [Branch Protection Rule](https://docs.github.com/ko/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule)
-- [CODEOWNERS file](https://docs.github.com/ko/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
-
-## Git Command
-
-### restore
-- `git restore <modified file>` : 파일을 수정하기 전 상태로 되돌린다.
-- `git restore --staged <file>` : 스테이징된 파일을 언스테이징한다.
-- `git restore --source=<hash> <file>` : 특정 커밋의 파일을 수정하기 전 상태로 되돌린다.
-
-### fetch
-- `git fetch` : 원격 저장소의 변경사항을 로컬 저장소로 가져온다.
-
-# Github
-
-## Github Pages
+이러한 도구들을 통해 조직은 빠른 개발 및 출시 주기를 달성하고, 안정적이고 신뢰할 수 있는 소프트웨어를 제공할 수 있게 한다.
