@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+
+# vscode
+.vscode/
+
+# C/C++
+a.out
+a.out.dSYM/
+
+# Node.js
+node_modules/
+
+# Python
+__pycache__/
