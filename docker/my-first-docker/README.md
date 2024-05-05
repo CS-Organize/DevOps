@@ -92,3 +92,14 @@ docker stop <Container ID>
 docker rm <Container ID>
 docker rmi <Image ID>
 ```
+
+## Push Docker Image
+```bash
+docker tag <Image Name> <Docker Hub Username>/<Image Name>:<Tag>
+docker login
+docker push <Docker Hub Username>/<Image Name>:<Tag>
+```
+- (image) tag: Personal Docker Hub에 Image를 Push하기 위해서는 <Docker Hub Username>/<Image Name>:<Tag> 형식으로 Tag를 지정해야 한다.
+- login: Docker Hub에 로그인하는 명령어
+- push: Docker Hub에 Image를 Push하는 명령어
+```
