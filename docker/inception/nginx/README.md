@@ -14,7 +14,7 @@ FROM alpine:3.18
 
 ```bash
 docker build -t alpine:3.18 .
-docker run -d --name alpine -p 80:80 alpine:3.18
+docker run -d --name alpine -p 80:80 -p 443:443 alpine:3.18
 ```
 
 ~~이 방식으로 진행하려 했으나, nginx을 재시작하기 위해 필요한 명령어인 `service`, `systemctl` 등이 없어서 그냥 `Dockerfile`을 수정 후 재시작하는 방법으로 진행했다.~~\
@@ -176,7 +176,6 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 
 ```nginx.conf
-
 events {
     # 워커 프로세스가 동시에 처리할 수 있는 커넥션의 수를 설정한다.
     # worker_connections  1024;  ## Default: 1024
@@ -216,17 +215,12 @@ http {
 }
 ```
 
-```
-# SSL/TLS settings
-# listen 443 ssl;
-# listen [::]:443 ssl;
-# ssl_certificate /etc/ssl/certs/your_domain_name.pem; # Modify with your SSL certificate path
-# ssl_certificate_key /etc/ssl/private/your_domain_name.key; # Modify with your SSL key path
-# ssl_protocols TLSv1.2 TLSv1.3;
-# ssl_ciphers HIGH:!aNULL:!MD5; # HIGH: 모든 암호화 알고리즘을 사용하되, aNULL과 MD5는 사용하지 않는다.
-```
+[사이드카 컨테이너로 TLS 사용 - Azure Container Instances | Microsoft Learn](https://learn.microsoft.com/ko-kr/azure/container-instances/container-instances-container-group-ssl)
+[[홈서버 구축기] SSL 인증서 만들기 (연습) - 천의무봉](https://blog.hangadac.com/2017/07/31/%ED%99%88%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95%EA%B8%B0-ssl-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%97%B0%EC%8A%B5/)
+[How to generate a self-signed SSL certificate using OpenSSL? - Stack Overflow](https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl)
+[Docker 설치하고, Docker로 웹 어플리케이션 배포해보기](https://wnsgml972.github.io/setting/2020/07/20/docker/)
+[Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
 
-- [Nginx TLS Configuration](https://www.cyberciti.biz/faq/configure-nginx-to-use-only-tls-1-2-and-1-3/)
-- [HTTPS Configuration](https://nginx.org/en/docs/http/configuring_https_servers.html)
-- [localhost를 위한 인증서 - Let's Encrypt - 무료 SSL/TLS 인증서](https://letsencrypt.org/ko/docs/certificates-for-localhost/)
-- [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
+### seunan.42.fr
+[로컬에서 도메인 주소로 테스트하기 - hosts 파일](https://velog.io/@wooojini/%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EC%86%8C%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0-hosts-%ED%8C%8C%EC%9D%BC)
+[[Windows] hosts 변경하기 :: Free Will](https://ldne.tistory.com/240)
