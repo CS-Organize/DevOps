@@ -1,0 +1,68 @@
+services:
+    mariadb:
+        build:
+            context: ./requirements/mariadb
+            # dockerfile: Dockerfile # 파일명이 Dockerfile이 아니면 명시해줘야 함
+        container_name: mariadb
+        restart: unless-stopped
+        env_file: .env
+        # .env 파일에 정의된 것 외에 추가 환경 변수를 추가
+        environment:
+            - MYSQL_DATABASE=wordpress
+        # dbdata라는 명명된 볼륨을 /var/lib/mysql 디렉토리에 마운트
+        volumes:
+            - dbdata:/var/lib/mysql
+        # 이미지에 대한 기본 CMD 지침을 재정의
+        command: "--default-authentication-plugin=mysql_native_password"
+        networks:
+            - app-network
+    wordpress:
+        depends_on:
+            - mariadb
+        build:
+            context: ./requirements/wordpress
+        container_name: wordpress
+        restart: unless-stopped
+        env_file: .env
+        environment:
+            - WORDPRESS_DB_HOST=mariadb:3306
+            - WORDPRESS_DB_USER=$MYSQL_USER
+            - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
+            - WORDPRESS_DB_NAME=wordpress
+        volumes:
+            - wordpress:/var/www/html
+        networks:
+            - app-network
+    webserver:
+        depends_on:
+            - wordpress
+        build:
+            context: ./requirements/nginx
+        container_name: webserver
+        restart: unless-stopped
+        ports:
+            - "80:80"
+        volumes:
+            - wordpress:/var/www/html
+            - ./nginx-conf:/etc/nginx/conf.d
+            - certbot-etc:/etc/letsencrypt
+        networks:
+            - app-network
+    certbot:
+        depends_on:
+            - webserver
+        image: certbot/certbot
+        container_name: certbot
+        volumes:
+            - certbot-etc:/etc/letsencrypt
+            - wordpress:/var/www/html
+        command: certonly --webroot --webroot-path=/var/www/html --email sammy@seunan.42.fr --agree-tos --no-eff-email --staging -d seunan.42.fr -d www.seunan.42.fr
+
+volumes:
+    certbot-etc:
+    wordpress:
+    dbdata:
+
+networks:
+    app-network:
+        driver: bridge

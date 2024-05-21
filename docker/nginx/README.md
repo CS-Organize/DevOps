@@ -2,6 +2,7 @@
 
 ## How to learn
 
+[Nginx - Alpine Linux](https://wiki.alpinelinux.org/wiki/Nginx)
 ### Experiment with the base image of alpine linux
 42과제인 Inception 프로젝트에서 베이스 이미지로 사용할 Alpine linux 컨테이너에 대한 실험을 위해 베이스 이미지만 사용 후, 컨테이너에 원격으로 접속하여 실행을 진행했다.
 
@@ -18,8 +19,11 @@ docker run -d --name alpine -p 80:80 -p 443:443 alpine:3.18
 ```
 
 ~~이 방식으로 진행하려 했으나, nginx을 재시작하기 위해 필요한 명령어인 `service`, `systemctl` 등이 없어서 그냥 `Dockerfile`을 수정 후 재시작하는 방법으로 진행했다.~~\
-찾아보니 컨테이너에서 `nginx -s reload`를 통해 nginx를 다시 시작할 수 있었다.\
-근데 vscode에서 컨테이너에 접속하니 CPU 자원을 엄청나게 사용해서 그냥 `Dockerfile`을 수정 후 재시작하는 방법으로 진행했다.
+\
+~~찾아보니 컨테이너에서 `nginx -s reload`를 통해 nginx를 다시 시작할 수 있었다.\
+근데 vscode에서 컨테이너에 접속하니 CPU 자원을 엄청나게 사용해서 그냥 `Dockerfile`을 수정 후 재시작하는 방법으로 진행했다.~~
+
+`docker exec -it alpine /bin/sh`를 통해서 컨테이너에 접속한 후, `nginx -s reload`를 통해 nginx를 재시작할 수 있었다.
 
 ### Install Nginx on Alpine Linux
 [Alpine Linux SSL Setup](https://www.cyberciti.biz/faq/how-to-install-letsencrypt-free-ssltls-for-nginx-certificate-on-alpine-linux/)을 참고해서 Nginx를 설치하고,
@@ -221,6 +225,7 @@ http {
 [Docker 설치하고, Docker로 웹 어플리케이션 배포해보기](https://wnsgml972.github.io/setting/2020/07/20/docker/)
 [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
 
-### seunan.42.fr
+### Domain Name System (DNS)
 [로컬에서 도메인 주소로 테스트하기 - hosts 파일](https://velog.io/@wooojini/%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EC%86%8C%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0-hosts-%ED%8C%8C%EC%9D%BC)
 [[Windows] hosts 변경하기 :: Free Will](https://ldne.tistory.com/240)
+[docker - Alpine Dockerfile advantages of --no-cache vs. rm /var/cache/apk/* - Stack Overflow](https://stackoverflow.com/questions/49118579/alpine-dockerfile-advantages-of-no-cache-vs-rm-var-cache-apk)
