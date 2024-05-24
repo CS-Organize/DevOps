@@ -34,6 +34,9 @@ DROP DATABASE IF EXISTS test ;
 FLUSH PRIVILEGES ;
 EOF
 
+	# https://dev.mysql.com/doc/refman/8.3/en/mysqld.html
+	# https://mariadb.com/resources/blog/using-mysql_embedded-and-mysqld-bootstrap-to-tinker-with-privilege-tables/
+	# https://docs.oracle.com/cd/E17952_01/mysql-5.7-en/server-options.html
 	/usr/bin/mysqld --user=mysql --bootstrap --verbose=0 --skip-name-resolve --skip-networking=0 < $tfile
 	# rm -f $tfile
 fi

@@ -1,12 +1,10 @@
-[Docker Compose를 이용하여 워드프레스 설치하기 > 우분투 서버 | 우성짱의 NAS](https://www.wsgvet.com/bbs/board.php?bo_table=ubuntu&wr_id=97)
-
-[custom setup](https://codingwithmanny.medium.com/custom-wordpress-docker-setup-8851e98e6b8)
-
-
-[WordPress Installation](https://www.hostinger.com/tutorials/how-to-install-wordpress-with-nginx-on-ubuntu/?ppc_campaign=google_search_generic_hosting_all&bidkw=defaultkeyword&lo=1009871)
-
-[Setup WordPress on Ubuntu 22.04 with Nginx and MariaDB | Works With The Web](https://www.workswiththeweb.com/wordpress/2024/01/14/Setup-WordPress-Ubuntu-Nginx/)
-
+- [Docker Compose를 이용하여 워드프레스 설치하기 > 우분투 서버 | 우성짱의 NAS](https://www.wsgvet.com/bbs/board.php?bo_table=ubuntu&wr_id=97)
+- [custom setup](https://codingwithmanny.medium.com/custom-wordpress-docker-setup-8851e98e6b8)
+- [Setup WordPress on Ubuntu 22.04 with Nginx and MariaDB | Works With The Web](https://www.workswiththeweb.com/wordpress/2024/01/14/Setup-WordPress-Ubuntu-Nginx/)
+- [docker-compose syntex](https://nirsa.tistory.com/79)
+- [Dockerfile](https://adjh54.tistory.com/414)
+- [docker-compose: difference between networks and links - Stack Overflow](https://stackoverflow.com/questions/41294305/docker-compose-difference-between-networks-and-links)
+- [Docker Volume Tutorial](https://seosh817.tistory.com/374)
 
 Docker 볼륨 내의 컨텐츠를 확인하는 방법 중 하나는 Docker 컨테이너를 사용하여 해당 볼륨을 마운트하고, 그 내부를 탐색하는 것입니다. 위에서 제공된 출력을 바탕으로, `srcs_dbdata` 볼륨 안의 컨텐츠를 확인하는 방법을 설명하겠습니다.
 
@@ -48,10 +46,7 @@ ls -l
 
 이 방법을 사용하면 별도의 서비스 중단 없이 Docker 볼륨 내의 데이터를 안전하게 탐색하고 관리할 수 있습니다. 
 
-이런 자료를 참고했어요.
-[1] Learn Microsoft - 볼륨 인식 방법 - Windows drivers (https://learn.microsoft.com/ko-kr/windows-hardware/drivers/ifs/how-the-volume-is-recognized)
-[2] Autodesk - Flame에 대한 vic(볼륨 무결성 확인) 사용 방법 (https://www.autodesk.co.kr/support/technical/article/caas/sfdcarticles/sfdcarticles/KOR/Using-vic-Volume-Integrity-Check.html)
-[3] AWS Documentation - Amazon EBS 볼륨에 대한 정보 보기 (https://docs.aws.amazon.com/ko_kr/ebs/latest/userguide/ebs-describing-volumes.html)
-[4] Microsoft Community - 사내 전체 볼륨 라이센스 제품키 확인 (https://answers.microsoft.com/ko-kr/windows/forum/all/%EC%82%AC%EB%82%B4-%EC%A0%84%EC%B2%B4/079b4530-5b1b-4025-b410-334cf6cf55e7) 
-
-뤼튼 사용하러 가기 > https://agent.wrtn.ai/5xb91l
+- [1 Learn Microsoft - 볼륨 인식 방법 - Windows drivers ](https://learn.microsoft.com/ko-kr/windows-hardware/drivers/ifs/how-the-volume-is-recognized)
+- [2 Autodesk - Flame에 대한 vic(볼륨 무결성 확인) 사용 방법](https://www.autodesk.co.kr/support/technical/article/caas/sfdcarticles/sfdcarticles/KOR/Using-vic-Volume-Integrity-Check.html)
+- [3 AWS Documentation - Amazon EBS 볼륨에 대한 정보 보기](https://docs.aws.amazon.com/ko_kr/ebs/latest/userguide/ebs-describing-volumes.html)
+- [4 Microsoft Community - 사내 전체 볼륨 라이센스 제품키 확인](https://answers.microsoft.com/ko-kr/windows/forum/all/%EC%82%AC%EB%82%B4-%EC%A0%84%EC%B2%B4/079b4530-5b1b-4025-b410-334cf6cf55e7) 

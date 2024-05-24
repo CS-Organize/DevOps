@@ -1,3 +1,5 @@
+# https://wiki.alpinelinux.org/wiki/MariaDB
+# https://docs.3rdeyesys.com/docs/database/mysql-mariadb/configure/config-file-my-cnf-position/
 #
 # These groups are read by MariaDB server.
 # Use it for options that only the server (but not clients) should see

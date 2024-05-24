@@ -1,6 +1,4 @@
 # https://github.com/yobasystems/alpine-mariadb/blob/master/alpine-mariadb-aarch64/Dockerfile
-
-# Base image
 FROM alpine:3.18
 
 RUN apk update && \
@@ -10,15 +8,12 @@ RUN apk update && \
     touch /var/log/mysql/error.log && \
     chown -R mysql:mysql /var/log/mysql/
 
-EXPOSE 3306
-
 COPY tools/run.sh /scripts/run.sh
 COPY conf/mariadb-server.cnf /etc/my.cnf.d/mariadb-server.cnf
 
 RUN chmod -R 755 /scripts
 
-# HEALTHCHECK --start-period=5m \
-#     CMD mariadb -e 'SELECT @@datadir;' || exit 1
+EXPOSE 3306
 
 VOLUME ["/var/lib/mysql"]
 
