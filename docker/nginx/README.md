@@ -219,13 +219,8 @@ http {
 }
 ```
 
-[사이드카 컨테이너로 TLS 사용 - Azure Container Instances | Microsoft Learn](https://learn.microsoft.com/ko-kr/azure/container-instances/container-instances-container-group-ssl)
-[[홈서버 구축기] SSL 인증서 만들기 (연습) - 천의무봉](https://blog.hangadac.com/2017/07/31/%ED%99%88%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95%EA%B8%B0-ssl-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%97%B0%EC%8A%B5/)
-[How to generate a self-signed SSL certificate using OpenSSL? - Stack Overflow](https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl)
-[Docker 설치하고, Docker로 웹 어플리케이션 배포해보기](https://wnsgml972.github.io/setting/2020/07/20/docker/)
-[Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html)
-
-### Domain Name System (DNS)
-[로컬에서 도메인 주소로 테스트하기 - hosts 파일](https://velog.io/@wooojini/%EB%A1%9C%EC%BB%AC%EC%97%90%EC%84%9C-%EB%8F%84%EB%A9%94%EC%9D%B8-%EC%A3%BC%EC%86%8C%EB%A1%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EA%B8%B0-hosts-%ED%8C%8C%EC%9D%BC)
-[[Windows] hosts 변경하기 :: Free Will](https://ldne.tistory.com/240)
-[docker - Alpine Dockerfile advantages of --no-cache vs. rm /var/cache/apk/* - Stack Overflow](https://stackoverflow.com/questions/49118579/alpine-dockerfile-advantages-of-no-cache-vs-rm-var-cache-apk)
+### SSL Configuration
+- [사이드카 컨테이너로 TLS 사용 - Azure Container Instances | Microsoft Learn](https://learn.microsoft.com/ko-kr/azure/container-instances/container-instances-container-group-ssl)
+- [[홈서버 구축기] SSL 인증서 만들기 (연습) - 천의무봉](https://blog.hangadac.com/2017/07/31/%ED%99%88%EC%84%9C%EB%B2%84-%EA%B5%AC%EC%B6%95%EA%B8%B0-ssl-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0-%EC%97%B0%EC%8A%B5/)
+- [How to generate a self-signed SSL certificate using OpenSSL? - Stack Overflow](https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl)
+- [Docker 설치하고, Docker로 웹 어플리케이션 배포해보기](https://wnsgml972.github.io/setting/2020/07/20/docker/)
