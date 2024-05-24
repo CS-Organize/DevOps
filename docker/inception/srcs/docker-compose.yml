@@ -40,12 +40,12 @@ services:
             - wordpress:/var/www/html
         networks:
             - app-network
-    webserver:
+    nginx:
         depends_on:
             - wordpress
         build:
             context: ./requirements/nginx
-        container_name: webserver
+        container_name: nginx
         restart: on-failure
         ports:
             - "443:443"

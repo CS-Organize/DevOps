@@ -1,5 +1,5 @@
 # https://github.com/yobasystems/alpine-mariadb/blob/master/alpine-mariadb-aarch64/Dockerfile
-FROM alpine:3.18
+FROM alpine:3.19
 
 RUN apk update && \
     apk add --no-cache mariadb mariadb-client mariadb-server-utils && \

@@ -28,40 +28,40 @@ BG_DEFAULT = \033[49m
 RESET = \033[0m
 
 up:
-	@docker-compose -f srcs/docker-compose.yml up -d
+	@docker-compose -f srcs/docker-compose.yml -p inception up -d
 	@echo "$(FG_GREEN)Connect to $(FG_WHITE)$(UNDERLINE)https://localhost$(RESET)"
 
 build:
-	@docker-compose -f srcs/docker-compose.yml build
+	@docker-compose -f srcs/docker-compose.yml -p inception build
 
 down:
-	@docker-compose -f srcs/docker-compose.yml down
+	@docker-compose -f srcs/docker-compose.yml -p inception down
 	@echo "$(FG_RED)Disconnected$(RESET)"
 
 stop:
-	@docker-compose -f srcs/docker-compose.yml stop
+	@docker-compose -f srcs/docker-compose.yml -p inception stop
 	@echo "$(YELLOW)Stopped$(RESET)"
 
 start:
 	@echo "$(FG_GREEN)Started$(RESET)"
-	@docker-compose -f srcs/docker-compose.yml start
+	@docker-compose -f srcs/docker-compose.yml -p inception start
 	@echo "$(FG_GREEN)Connect to $(FG_WHITE)$(UNDERLINE)https://localhost$(RESET)"
 
 re:
 	@echo "$(FG_GREEN)Restarted$(RESET)"
-	@docker-compose -f srcs/docker-compose.yml restart
-	@echo "$(FG_GREEN)Connect to $(FG_WHITE)$(UNDERLINE)https://localhost$(RESET)"
+	@make clean
+	@make up
 
 logs:
 	@echo "$(FG_CYAN)Logging$(RESET)"
-	@docker-compose -f srcs/docker-compose.yml logs -f
+	@docker-compose -f srcs/docker-compose.yml -p inception logs -f
 
 ps:
 	@echo "$(FG_MAGENTA)Status$(RESET)"
-	@docker-compose -f srcs/docker-compose.yml ps
+	@docker-compose -f srcs/docker-compose.yml -p inception ps
 
 clean:
-	@docker-compose -f srcs/docker-compose.yml down -v
+	@docker-compose -f srcs/docker-compose.yml -p inception down -v
 	@docker system prune -af --volumes
 	@echo "$(FG_BLUE)Cleaned up$(RESET)"
 
