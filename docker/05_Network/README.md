@@ -1,0 +1,5 @@
+[Docker Container Network Bridge Explanation](https://jangseongwoo.github.io/docker/docker_container_network/)
+[Docker Network Basics](https://itbhome.tistory.com/47)
+[Standalone Container Networking](https://docs.docker.com/network/network-tutorial-standalone/)
+[Bridge network driver](https://docs.docker.com/network/drivers/bridge/)
+[Docker Bridge Network](https://medium.com/@augustineozor/understanding-docker-bridge-network-6e499da50f65)

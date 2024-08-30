@@ -5,6 +5,7 @@
 - [Dockerfile](https://adjh54.tistory.com/414)
 - [docker-compose: difference between networks and links - Stack Overflow](https://stackoverflow.com/questions/41294305/docker-compose-difference-between-networks-and-links)
 - [Docker Volume Tutorial](https://seosh817.tistory.com/374)
+- [WordPress Installation Guide](https://techplay.blog/%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90%EC%84%9C-%EC%9B%8C%EB%93%9C%ED%94%84%EB%A0%88%EC%8A%A4wordpress%EB%A5%BC-%EC%84%A4%EC%B9%98%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-lemp/)
 
 Docker 볼륨 내의 컨텐츠를 확인하는 방법 중 하나는 Docker 컨테이너를 사용하여 해당 볼륨을 마운트하고, 그 내부를 탐색하는 것입니다. 위에서 제공된 출력을 바탕으로, `srcs_dbdata` 볼륨 안의 컨텐츠를 확인하는 방법을 설명하겠습니다.
 

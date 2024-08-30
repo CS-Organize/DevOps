@@ -12,13 +12,11 @@ services:
         # .env 파일에 정의된 것 외에 추가 환경 변수를 추가
         environment:
             - MYSQL_DATABASE=$MYSQL_DATABASE
-        # dbdata라는 명명된 볼륨을 /var/lib/mysql 디렉토리에 마운트
-        ports:
+        expose:
             - "3306"
+        # dbdata라는 명명된 볼륨을 /var/lib/mysql 디렉토리에 마운트
         volumes:
             - dbdata:/var/lib/mysql
-        # 이미지에 대한 기본 CMD 지침을 재정의
-        # command: "--default-authentication-plugin=mysql_native_password"
         networks:
             - app-network
     wordpress:
@@ -34,7 +32,7 @@ services:
             - WORDPRESS_DB_USER=$MYSQL_USER
             - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
             - WORDPRESS_DB_NAME=$MYSQL_DATABASE
-        ports:
+        expose:
             - "9000"
         volumes:
             - wordpress:/var/www/html
